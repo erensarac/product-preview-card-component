@@ -1,0 +1,190 @@
+@font-face {
+  font-display: swap;
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/Fraunces/Fraunces-Bold.eot");
+  src: url("./assets/fonts/Fraunces/Fraunces-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/Fraunces/Fraunces-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Fraunces/Fraunces-Bold.woff") format("woff"),
+    url("./assets/fonts/Fraunces/Fraunces-Bold.ttf") format("truetype"),
+    url("./assets/fonts/Fraunces/Fraunces-Bold.svg#Fraunces") format("svg");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("./assets/fonts/Montserrat/Montserrat-Medium.eot");
+  src: url("./assets/fonts/Montserrat/Montserrat-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat/Montserrat-Medium.woff") format("woff"),
+    url("./assets/fonts/Montserrat/Montserrat-Medium.ttf") format("truetype"),
+    url("./assets/fonts/Montserrat/Montserrat-Medium.svg#Montserrat")
+      format("svg");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./assets/fonts/Montserrat/Montserrat-Bold.eot");
+  src: url("./assets/fonts/Montserrat/Montserrat-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/Montserrat/Montserrat-Bold.woff2") format("woff2"),
+    url("./assets/fonts/Montserrat/Montserrat-Bold.woff") format("woff"),
+    url("./assets/fonts/Montserrat/Montserrat-Bold.ttf") format("truetype"),
+    url("./assets/fonts/Montserrat/Montserrat-Bold.svg#Montserrat")
+      format("svg");
+}
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 1.75rem 1rem;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--cream);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.card__image--mobile,
+.card__image--desktop {
+  flex: 1;
+}
+
+.card__image--mobile {
+  display: block;
+  width: 100%;
+}
+
+.card__image--desktop {
+  display: none;
+}
+
+.card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card__product-category {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  color: var(--dark-grayish-blue);
+}
+
+.card__product-name {
+  font-family: "Fraunces", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--very-dark-blue);
+}
+
+.card__product-description {
+  font-weight: 500;
+  line-height: 23px;
+  margin-bottom: 1.625rem;
+  color: var(--dark-grayish-blue);
+}
+
+.card__product-price {
+  color: var(--dark-cyan);
+  display: flex;
+  align-items: center;
+  font-family: "Fraunces", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.625rem;
+}
+
+.card__product-old-price {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-decoration: 1px;
+  text-decoration-line: line-through;
+  text-decoration-color: var(--dark-grayish-blue);
+  margin-left: 1rem;
+  color: var(--dark-grayish-blue);
+}
+
+.card__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--dark-cyan);
+  outline: 0;
+  border: 0;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+}
+
+.card__button:hover {
+  background-color: #1a4031;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding: 0;
+  }
+  .card {
+    width: 100%;
+    max-width: 37.5rem;
+    height: 28.125rem;
+    flex-direction: row;
+  }
+
+  .card__content {
+    padding: 2rem;
+  }
+
+  .card__image--mobile {
+    display: none;
+  }
+
+  .card__image--desktop {
+    display: block;
+  }
+}
